@@ -3,6 +3,7 @@
 
 // Với 3 input là giá chưa thuế, cân nặng cần mua, phần trăm thuế, có thể đưa về code đơn giản ko cần math.h
 
+#include<stdio.h>
 int  main(){
     // input giá k thuế; thuế, cân nặng
     // output tổng giá trị sau thuế
