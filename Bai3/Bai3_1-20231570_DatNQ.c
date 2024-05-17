@@ -1,8 +1,6 @@
 // 2024/05/04 19:44:39 GMT+7 (c) https://tdcq.me/
-#include <stdio.h>
-#include <math.h>
 
-#include<stdio.h>
+#include <stdio.h>
 
 int main(){
     float t, l, h;
