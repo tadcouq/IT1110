@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 int main(){
-    float t, l, h;
-    scanf("%f%f%f", &t, &l, &h);
-    printf("%f\n%f", t+l+h, (t+l+h)/3);
+    double t, l, h;
+    scanf("%lf%lf%lf", &t, &l, &h);
+    printf("%lf\n%lf", t+l+h, (t+l+h)/3);
     return 0;
 }
