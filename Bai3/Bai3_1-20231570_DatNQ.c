@@ -2,27 +2,11 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
-    float toan, ly, hoa, total, avg;
+#include<stdio.h>
 
-    // Nhập điểm
-    printf("Nhap diem mon Toan: ");
-    scanf("%f", &toan);
-    
-    printf("Nhap diem mon Ly: ");
-    scanf("%f", &ly);
-    
-    printf("Nhap diem mon Hoa: ");
-    scanf("%f", &hoa);
-
-    // Tính tổng điểm, điểm trung bình
-    total = toan + ly + hoa;
-    avg = total / 3;
-
-    // In kết quả
-    printf("Tong diem 3 mon: %.2f\n", total);
-    printf("Diem trung binh: %.2f\n", avg);
-
+int main(){
+    float t, l, h;
+    scanf("%f%f%f", &t, &l, &h);
+    printf("%f\n%f", t+l+h, (t+l+h)/3);
     return 0;
 }
-
