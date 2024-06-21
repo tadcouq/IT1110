@@ -23,38 +23,36 @@ Dữ liệu đầu vào	    |Kết quả
 
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 1000
 
-int main() {
-    int n;
-    int A[MAX]; B[MAX];
-    /* parameter(các tham số trong hàm): 
-    A: mảng chứa số phần tử được người dùng nhập vào
-    B: mảng phụ để lưu số phần tử đảo ngược của mảng A
-    n: số phần tử mảng người dùng nhập vào
-    */
+
+int main()
+{
+    int n, i = 0;
+    int *A, *B;
     scanf("%d", &n);
-    if (n <= 0) {
+    if (n < 0)
+    {
         printf("Error");
         return 0;
     }
-    // Nhập mảng A
-    for (int i = 0; i < n; i++) {
+    A = (int*)malloc(n * sizeof(int));
+    B = (int*)malloc(n * sizeof(int));
+    for (i = 0; i < n; i++)
+    {
         scanf("%d", &A[i]);
     }
-    // Đảo ngược A thành các phần tử của mảng B
-    for (int i = 0; i < n; i++) {
-        B[i] = A[n - i - 1];
+    
+    for(i=0;i<=n-1;i++){
+        B[i]=A[n-1-i];
     }
-    // In ra mảng B
-    for (int i = 0; i < n; i++) {
+    for(i=0;i<n;i++){
         printf("%d ", B[i]);
     }
-    // Tính tổng các phần tử của mảng A
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum += A[i];
-    } 
-    printf("\n%d", sum);
-    return 0;
-}   
+    int S=0;
+    for(i=0;i<n;i++){
+        S=S+A[i];
+    }
+    printf("\n%d", S);
+    free(A);
+    free(B);
+}
