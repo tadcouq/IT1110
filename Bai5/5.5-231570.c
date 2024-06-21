@@ -23,36 +23,39 @@ Cách làm : Ý tưởng tương tự bài 5.4, có điều bài 5.4 hỏi tích
 int main()
 {
     int n, i = 0, j = 0, temp = 0;
-    int *A;
+    int *arr;
 
     scanf("%d", &n);
-    if (n < 0 && 10 < n)
+    if (2 <= n && 10 >= n)
     {
-        printf("Error");
-        return 0;
-    }
-    A = (int *)malloc(n * sizeof(int));
-    for (i = 0; i < n; i++)
-    {
-        scanf("%d", &A[i]);
-    }
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < n - 1 - i; j++)
-        {   // tại sao lại có -i?
-            // vì sau mỗi lần lặp, số cặp cần so sánh lại giảm đi 1, do phần tử cuối cùng đã nằm đúng vị trí
-            if (A[j] + A[j + 1] >= temp)
-            {
-                temp = A[j] + A[j + 1];
+        arr = (int *)malloc(n * sizeof(int));
+        for (i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+        for (i = 0; i < n; i++)
+        {
+            for (j = 0; j < n - 1 - i; j++)
+            { // tại sao lại có -i?
+                // vì sau mỗi lần lặp, số cặp cần so sánh lại giảm đi 1, do phần tử cuối cùng đã nằm đúng vị trí
+                // đây là bubble sort
+                if (arr[j] + arr[j + 1] >= temp)
+                {
+                    temp = arr[j] + arr[j + 1];
+                }
             }
         }
+        if (temp < 0)
+        {
+            printf("0");
+            return 0;
+        }
+
+        printf("%d ", temp);
     }
-    if temp < 0
+    else if (n == 1)
     {
         printf("0");
         return 0;
     }
-    printf("%d", temp);
-    free(A);
-    return 0;
 }
